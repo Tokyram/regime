@@ -5,6 +5,13 @@
     {
         
 
+        public function listecodevalide(){
+            $sql = "SELECT idCode,code, montant FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1)";
+            $query = $this->db->query($sql);
+            $row = $query->result_array();
+            return $row;
+        }
+
         public function insertcode($idcode,$iduser)
         {
             $sql = "INSERT INTO histoCode VALUES(null,?,?,0)";
@@ -28,6 +35,17 @@
             $sql = "SELECT idCode FROM code WHERE code = ?";
             $query = $this->db->query($sql, array($nomcode));
             $row = $query->row_array();
+            return $row;
+        }
+
+        public function getinfouser($iduser){
+            $sql = "SELECT u.pseudo,u.email,u.genre,i.taille,i.poids FROM users u
+            JOIN info i ON u.idUser = i.idUser WHERE u.idUser = ?";
+            $query = $this->db->query($sql, array($iduser));
+            $row = $query->row_array();
+
+          
+
             return $row;
         }
 

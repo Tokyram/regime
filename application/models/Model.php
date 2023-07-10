@@ -20,11 +20,23 @@
             return $valiny;
         }
 
-        public function inscritpion($nom,$email,$mdp)
+        public function inscription($pseudo,$email,$mdp,$genre,$taille,$poids)
         {
-            $sql = "INSERT INTO users VALUES('u'||nextval('seqUser'),?,?,?,0)";
-            $this->db->query($sql, array($nom,$email,$mdp));
-        }
+            $sql = "INSERT INTO users VALUES(null,?,?,?,?,0)";
+            $this->db->query($sql, array($pseudo,$email,$mdp,$genre));
+            
+            $last_insert_id = $this->db->insert_id();
 
+            $sql = "INSERT INTO info VALUES(null,$last_insert_id,?,?,'now()')";
+            $this->db->query($sql, array($taille,$poids));
+
+            $data = array(
+                'status' => 'OK',
+                'data' => $last_insert_id,
+            );
+
+            $jsonData = json_encode($data);
+            return $this->output->set_content_type('application/json')->set_output($jsonData);
+        }
     }
 ?>

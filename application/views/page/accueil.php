@@ -147,6 +147,69 @@
 
         
     </div>
+
+    <div class="content">
+        <h1>LISTE CODE VALIDE</h1>
+        
+        <div class="container">
+            <div class="text-center mb-5">
+              <h3>Jobs openning</h3>
+              <p class="lead">Eros ante urna tortor aliquam nisl magnis quisque hac</p>
+            </div>
+            <div class="cards mb-3">
+              <div class="cards-body">
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- <span class="avatar avatar-text rounded-3 me-4 mb-2">FD</span> -->
+                  <div class="row flex-fill">
+                    <div class="col-sm-5">
+                      <h4 class="h5">CODE</h4>
+                      <span class="badge bg-secondary">2000Ar</span> 
+                    </div>
+                    
+                    <div class="col-sm-3 text-lg-end">
+                      <!-- <a href="#" class="btn btn-primary stretched-link">Apply</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cards mb-3">
+              <div class="cards-body">
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- <span class="avatar avatar-text rounded-3 me-4 bg-warning mb-2">BE</span> -->
+                  <div class="row flex-fill">
+                    <div class="col-sm-5">
+                      <h4 class="h5">CODE</h4>
+                      <span class="badge bg-secondary">10 000Ar</span> 
+                    </div>
+                    
+                    <div class="col-sm-3 text-lg-end">
+                      <!-- <a href="#" class="btn btn-primary stretched-link">Apply</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cards mb-3">
+              <div class="cards-body">
+                <div class="d-flex flex-column flex-lg-row">
+                  <!-- <span class="avatar avatar-text rounded-3 me-4 bg-info mb-2">PM</span> -->
+                  <div class="row flex-fill">
+                    <div class="col-sm-5">
+                      <h4 class="h5">CODE</h4>
+                      <span class="badge bg-secondary">400 ar</span> 
+                    </div>
+                    
+                    <div class="col-sm-3 text-lg-end">
+                      <!-- <a href="#" class="btn btn-primary stretched-link">Apply</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
     
     <script>
         function toggleForm(formId) {

@@ -35,6 +35,13 @@ class Main extends CI_Controller
 		$this->Admin->validercode($idcode,$iduser);
 	}
 
+	public function getmonney(){
+		$iduser = $this->input->post("iduser");
+		
+		$this->load->model('Admin');
+		$this->Admin->getmonney($iduser);
+	}
+
     
 }
 ?>

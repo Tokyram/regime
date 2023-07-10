@@ -20,17 +20,22 @@
         }
 
         public function getmonney($iduser){
-            $sql = "SELECT sum(montant) as entree FROM histoPocket WHERE dateEntree = null";
-            $sql2 = "SELECT sum(montant) as sortie FROM histoPocket WHERE dateSortie = null";
+            $sql = "SELECT sum(montant) as entree FROM histoPocket WHERE idUser = ? AND dateSortie is null";
+            $sql2 = "SELECT sum(montant) as sortie FROM histoPocket WHERE idUser = ? AND dateEntree is null";
 
-            $query = $this->db->query($sql);
-            $query2 = $this->db->query($sql2);
+            $query = $this->db->query($sql, array($iduser));
+            $query2 = $this->db->query($sql2, array($iduser));
 
-            $sumentree = $query->row_array()['entree'];
-            $sumsortie = $query2->row_array()['sortie'];
+            $sumentree = $query->row_array();
+            $sumsortie = $query2->row_array();
+
+            $sumentree = $sumentree['entree'];
+            $sumsortie = $sumsortie['sortie'];
 
             $reste = $sumentree - $sumsortie;
-            return $reste;
+            echo $reste;
+            // return $reste;
+            
         }
 
         public function getcode($idcode)

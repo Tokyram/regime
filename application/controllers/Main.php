@@ -17,9 +17,12 @@ class Main extends CI_Controller
 		$this->load->view('index');
 	}
 
-	
 
-	
+
+	public function testnotif(){
+		$this->load->model('Admin');
+		$this->Admin->getnotif();
+	}
 
     
 }

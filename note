@@ -1,4 +1,6 @@
-Controller : Admin
+Controller : MAin
+Modele : Admin
 
 POST
 insertcode($idcode,$iduser)
+link

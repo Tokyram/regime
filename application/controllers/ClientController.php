@@ -48,6 +48,11 @@ class ClientController extends CI_Controller
 		$this->Client->getinfouser(2);
 	}
 
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
+
 
     
 }

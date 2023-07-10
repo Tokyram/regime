@@ -15,7 +15,17 @@ class Main extends CI_Controller
     public function index()
 	{
 		$this->load->view('index');
-	}	
+	}
+
+	public function code(){
+		$iduser = $this->input->post("iduser");
+		$nomcode = $this->input->post("nomcode");
+
+		$this->load->model('Admin');
+		$idcode = $this->Admin->getidcode($nomcode);
+
+		$this->Admin->insertcode($idcode['idCode'],$iduser);
+	}
 
     
 }

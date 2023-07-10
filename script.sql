@@ -1,6 +1,6 @@
-CREATE DATABASE S4_48H;
+CREATE DATABASE regime;
 
-USE S4_48H;
+USE regime;
 
 CREATE TABLE users(
     idUser INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -34,6 +34,7 @@ CREATE TABLE activite(
     nom VARCHAR(20),
     resultat NUMERIC(10, 2),
     frequence INT,
+    montant NUMERIC(10, 2),
     CONSTRAINT FK_type FOREIGN KEY(idType)
     REFERENCES typeActivite(idType)
 );
@@ -59,6 +60,8 @@ CREATE TABLE regime(
     idRegime INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     idUser INT,
     dateRegime DATETIME,
+    montant NUMERIC(10, 2),
+    objectif NUMERIC(10, 2),
     CONSTRAINT FK_userRegime FOREIGN KEY(idUser)
     REFERENCES users(idUser)
 );

@@ -24,6 +24,15 @@
     <div class="content" id="section1">
 
         <div class="valide">
+
+
+        <?php 
+          foreach($notif as $notifs){
+
+          
+
+        ?>
+
         <div class="cardcode"> 
             <!-- <button class="dismiss" type="button">×</button>  -->
             <div class="header"> 
@@ -31,9 +40,9 @@
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </div> 
                 <div class="contentee">
-                   <span class="title">CODE</span> 
-                   <p class="message">1 000 000Ar</p> 
-                   <p class="message"><strong>User</strong> : nom de la personne</p> 
+                   <span class="title"><?php  echo $notifs['code']; ?></span> 
+                   <p class="message"><?php  echo $notifs['montant']; ?>Ar</p> 
+                   <p class="message"><strong>User</strong> : <?php  echo $notifs['pseudo']; ?></p> 
                    </div> 
                    <div class="actions">
                     <a href="#"><button class="history" type="button">VALIDER</button> </a>
@@ -41,26 +50,13 @@
                 </div> 
             </div> 
         </div>
+        <?php 
+          }
+        ?>
+
   
 
-        <div class="cardcode"> 
-            <!-- <button class="dismiss" type="button">×</button>  -->
-            <div class="header"> 
-              <div class="image">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                </div> 
-                <div class="contentee">
-                   <span class="title">CODE</span> 
-                   <p class="message">1 000 000Ar</p> 
-                   <p class="message"><strong>User</strong> : nom de la personne</p> 
-
-                   </div> 
-                   <div class="actions">
-                      <a href="#"><button class="history" type="button">VALIDER</button> </a>
-                      <a href="#"><button class="track" type="button">REFUSER</button> </a>
-                </div> 
-            </div> 
-        </div>
+        
     </div>
     </div>
 

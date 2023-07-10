@@ -20,7 +20,7 @@ class Login extends CI_Controller {
 		if($this->Model->checkLogin($mail,$pass))
 		{
 			if($this->session->userdata('typeUser') == 0){
-				redirect('admin/index');
+				redirect(base_url("AdminController"));
 			}else{
 				redirect('client/index');
 			}

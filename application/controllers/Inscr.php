@@ -8,8 +8,12 @@ class Inscr extends CI_Controller {
 	
     public function index()
 	{
+<<<<<<< Updated upstream
 		echo "heehee";
 		//$this->load->view('page/inscription');
+=======
+		$this->load->view('page/inscription');
+>>>>>>> Stashed changes
 	}	
 
 	public function logup()

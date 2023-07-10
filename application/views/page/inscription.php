@@ -9,37 +9,7 @@
 </head>
 
 
-<script>
-   document.getElementById("myForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
 
-  var form = event.target;
-  var formData = new FormData(form);
-
-  var request = new XMLHttpRequest();
-  request.open("POST", "/Regime/Inscr/logup", true); // Replace with your controller's URL
-
-  request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-      var response = request.responseText;
-      // Handle the successful response here
-      console.log(response);
-    } else {
-      // Handle errors here
-      console.error(request.status);
-    }
-  };
-
-  request.onerror = function() {
-    // Handle network errors here
-    console.error("Network error");
-  };
-
-  request.send(formData);
-});
-
-
-</script>
 <body>
     <form class="form_container"  id="myForm">
         <div class="logo_container">
@@ -116,7 +86,7 @@
         </div>
         
         
-        <button title="Sign In" class="sign-in_btn">
+        <button title="Sign In" class="sign-in_btn" type="submit">
           <span>S'inscrire</span>
         </button>
 
@@ -145,5 +115,37 @@
         </svg>
         <a href="login.html" style="text-decoration: none; color: grey; display: flex; justify-content: center;"><span>Login</span></a>
       </button>
+
+      <script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  var form = event.target;
+  var formData = new FormData(form);
+
+  var request = new XMLHttpRequest();
+  request.open("POST", "<?php echo base_url(); ?>Inscr/logup", true); // Replace with your controller's URL
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      var response = request.responseText;
+      // Handle the successful response here
+      console.log(response);
+    } else {
+      // Handle errors here
+      console.error(request.status);
+    }
+  };
+
+  request.onerror = function() {
+    // Handle network errors here
+    console.error("Network error");
+  };
+
+  request.send(formData);
+});
+
+
+
+</script>
 </body>
 </html>

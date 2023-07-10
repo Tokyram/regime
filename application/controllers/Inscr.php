@@ -8,7 +8,8 @@ class Inscr extends CI_Controller {
 	
     public function index()
 	{
-		$this->load->view('page/inscr');
+		echo "heehee";
+		//$this->load->view('page/inscription');
 	}	
 
 	public function logup()

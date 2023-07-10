@@ -59,7 +59,7 @@
             <path fill="#4285f4" clip-path="url(#B)" d="M48 48L17 24l-4-3 35-10z"></path>
           </g>
         </svg>
-        <a href="index.html" style="text-decoration: none; color: grey; display: flex; justify-content: center;"><span>S'inscrire</span></a>
+        <a href="<?php echo base_url(); ?>Inscr" style="text-decoration: none; color: grey; display: flex; justify-content: center;"><span>S'inscrire</span></a>
       </button>
 </body>
 </html>

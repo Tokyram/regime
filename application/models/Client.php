@@ -4,7 +4,6 @@
     class Client extends CI_Model 
     {
         
-
         public function insertcode($idcode,$iduser)
         {
             $sql = "INSERT INTO histoCode VALUES(null,?,?,0)";
@@ -12,7 +11,7 @@
             
             $last_insert_id = $this->db->insert_id();
             $query = $this->db->where('idHistoCode', $last_insert_id)->get('histoCode');
-            
+        
             $last_row = $query->row();
 
             $data = array(
@@ -27,6 +26,7 @@
         public function getidcode($nomcode){
             $sql = "SELECT idCode FROM code WHERE code = ?";
             $query = $this->db->query($sql, array($nomcode));
+            
             $row = $query->row_array();
             return $row;
         }

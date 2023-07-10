@@ -18,8 +18,11 @@ class Main extends CI_Controller
 	}
 
 	
-
-	
+	public function stats()
+	{
+		$this->load->model('Admin');
+		$this->Admin->statsgenre();
+	}
 
     
 }

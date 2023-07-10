@@ -47,13 +47,13 @@
         }
         
         public function validercode($idcode,$iduser){
-            $sql = "SELECT * FROM (SELECT idCode, code FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1 )) AS t
-            WHERE idCode = ?";
-            $query = $this->db->query($sql, array($idcode));
-            $row = $query->row_array();
+            // $sql = "SELECT * FROM (SELECT idCode, code FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1 )) AS t
+            // WHERE idCode = ?";
+            // $query = $this->db->query($sql, array($idcode));
+            // $row = $query->row_array();
 
-            if(count($row)>0)
-            {
+            // if(count($row)>0)
+            // {
                 $message = "OK";
 
                 $this->load->model('Admin');
@@ -61,17 +61,17 @@
                 $montant = $this->Admin->getcode($idcode);
                 $total = $montant['montant'] + $this->Admin->getmonney($iduser);
 
-                $sql = "INSERT INTO histoPocket VALUES(null,?,?,'now()',null)";
+                $sql = "INSERT INTO histoPocket VALUES(null,?,?,now(),null)";
                 $query = $this->db->query($sql, array($iduser,$total));
                 
                 $last_insert_id = $this->db->insert_id();
                 $output = $last_insert_id;
 
                 $this->Admin->changestatuscode($idcode,$iduser);
-            }else{
-                $message = "Error";
-                $output = "Code Non Valide";
-            }
+            // }else{
+            //     $message = "Error";
+            //     $output = "Code Non Valide";
+            // }
 
             $data = array(
                 'status' => $message,

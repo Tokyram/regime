@@ -45,7 +45,7 @@
                    <p class="message"><strong>User</strong> : <?php  echo $notifs['pseudo']; ?></p> 
                    </div> 
                    <div class="actions">
-                    <a href="#"><button class="history" type="button">VALIDER</button> </a>
+                    <a href="<?php echo base_url() ?>/Main/validercode?idUser=<?php echo $notifs['idUser']; ?>&idCode=<?php echo $notifs['idCode']; ?>"><button class="history" type="button">VALIDER</button> </a>
                     <a href="#"><button class="track" type="button">REFUSER</button> </a> 
                 </div> 
             </div> 

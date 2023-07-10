@@ -21,8 +21,8 @@ class Main extends CI_Controller
 	
 
 	public function validercode(){
-		$iduser = $this->input->post("iduser");
-		$idcode = $this->input->post("idcode");
+		$iduser = $this->input->get("idUser");
+		$idcode = $this->input->get("idCode");
 
 		$this->load->model('Admin');
 		$this->Admin->validercode($idcode,$iduser);

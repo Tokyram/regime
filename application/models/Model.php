@@ -14,6 +14,7 @@
             if(count($row)>0)
             {
                 $valiny = true;
+                $this->session->set_userdata('idUser', $row['idUser']);
                 $this->session->set_userdata('nom', $row['nom']);
                 $this->session->set_userdata('typeUser', $row['typeUser']);
             }

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends CI_Controller 
+class ClientController extends CI_Controller 
 {
     // public function __construct()
     // {
@@ -17,9 +17,20 @@ class Main extends CI_Controller
 		$this->load->view('index');
 	}
 
-	
 
-	
+	public function codepage()
+	{
+		$this->load->view('page/code');
+
+	}
+
+	public function code(){
+		$iduser = $this->input->post("iduser");
+		$nomcode = $this->input->post("nomcode");
+		$idcode = $this->Client->getidcode($nomcode);
+		$this->Client->insertcode($idcode['idCode'],$iduser);
+	}
+
 
     
 }

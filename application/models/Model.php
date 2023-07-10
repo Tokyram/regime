@@ -15,7 +15,7 @@
             {
                 $valiny = true;
                 $this->session->set_userdata('idUser', $row['idUser']);
-                $this->session->set_userdata('nom', $row['nom']);
+                $this->session->set_userdata('pseudo', $row['pseudo']);
                 $this->session->set_userdata('typeUser', $row['typeUser']);
             }
             return $valiny;

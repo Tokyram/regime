@@ -72,16 +72,21 @@
       var request = new XMLHttpRequest();
       request.open("POST", "<?php echo base_url() ?>Login/login/", true); // Replace with your controller's URL
 
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400) {
-          var response = request.responseText;
-          // Handle the successful response here
-          console.log(response);
-        } else {
-          // Handle errors here
-          console.error(request.status);
+      request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+          // Request successful
+          window.location.href = "<?php echo base_url(); ?>/ClientController/accueil";  // Redirect to another page
+        } 
+        else if(request.status === 201){
+          window.location.href = "<?php echo base_url(); ?>/AdminController";  // Redirect to another page
         }
-      };
+        else  {
+          // Request failed
+          console.error("Request failed with status", request.status);
+        }
+      }
+    };
 
       request.onerror = function() {
         // Handle network errors here

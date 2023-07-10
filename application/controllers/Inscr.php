@@ -28,5 +28,11 @@ class Inscr extends CI_Controller {
 
 		$this->load->model('Model');
 		$this->Model->inscription($nom,$mail,$pass,$genre,$taille,$poids);
+		$this->session->set_userdata('pseudo', $nom);
+		$this->session->set_userdata('genre', $genre);
+		$this->session->set_userdata('taille', $taille);
+		$this->session->set_userdata('poids', $poids);
+		$this->session->set_userdata('typeUser', 1	);
+		header("HTTP/1.1 200 OK");
 	}
 }

@@ -18,8 +18,22 @@ class Main extends CI_Controller
 	}
 
 	
-
 	
+
+	public function validercode(){
+		$iduser = $this->input->get("idUser");
+		$idcode = $this->input->get("idCode");
+
+		$this->load->model('Admin');
+		$this->Admin->validercode($idcode,$iduser);
+	}
+
+	public function getmonney(){
+		$iduser = $this->input->post("iduser");
+		
+		$this->load->model('Admin');
+		$this->Admin->getmonney($iduser);
+	}
 
     
 }

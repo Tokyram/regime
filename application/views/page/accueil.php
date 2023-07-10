@@ -50,6 +50,7 @@
         </div>
         <a href="#"><button type="button" class="action">Nouvelle achat</button></a>
         <a href="<?php  echo base_url();?>ClientController/codepage"><button type="button" class="action" style="background-color: #ffffff;">Ajouter Argent</button></a>
+        <a href="<?php  echo base_url();?>ClientController/codepage"><button type="button" class="action" style="background-color: #ffffff;">DECONNEXION</button></a>
         
         <div class="vola">
             <p><?php echo $money; ?> Ar</p>

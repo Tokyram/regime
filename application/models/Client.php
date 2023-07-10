@@ -5,6 +5,13 @@
     {
         
 
+        public function listecodevalide(){
+            $sql = "SELECT idCode,code, montant FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1)";
+            $query = $this->db->query($sql);
+            $row = $query->result_array();
+            return $row;
+        }
+
         public function insertcode($idcode,$iduser)
         {
             $sql = "INSERT INTO histoCode VALUES(null,?,?,0)";

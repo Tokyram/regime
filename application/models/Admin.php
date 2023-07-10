@@ -4,12 +4,7 @@
     class Admin extends CI_Model 
     {
 
-        public function listecodevalide(){
-            $sql = "SELECT idCode,code FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1)";
-            $query = $this->db->query($sql);
-            $row = $query->row_array();
-            return $row;
-        }
+        
 
         public function changestatuscode($idcode,$iduser){
             $sql = "UPDATE histoCode SET statusCode = 1 WHERE idCode = ? AND idUser = ?";

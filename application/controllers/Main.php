@@ -18,7 +18,10 @@ class Main extends CI_Controller
 	}
 
 	
-
+	public function testinfo(){
+		$this->load->model('Client');
+		$this->Client->getinfouser(2);
+	}
 	
 
     

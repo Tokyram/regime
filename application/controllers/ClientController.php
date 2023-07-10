@@ -24,6 +24,12 @@ class ClientController extends CI_Controller
 
 	}
 
+	public function accueil()
+	{
+		$this->load->view('page/accueil');
+
+	}
+
 	public function code(){
 		$iduser = $this->input->post("iduser");
 		$nomcode = $this->input->post("nomcode");

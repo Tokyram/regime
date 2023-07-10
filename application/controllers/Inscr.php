@@ -22,12 +22,11 @@ class Inscr extends CI_Controller {
 		$taille = $this->input->post("taille");
 		$poids = $this->input->post("poids");
 
-        if($pass != $repass){
-            redirect('inscr/index');
-        }
+        // if($pass != $repass){
+        //     redirect('inscr/index');
+        // }
 
 		$this->load->model('Model');
-		$this->Model->inscritpion($nom,$mail,$mdp,$genre,$taille,$poids);
-        redirect('index');
+		$this->Model->inscritpion($nom,$mail,$pass,$genre,$taille,$poids);
 	}
 }

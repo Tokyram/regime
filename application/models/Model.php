@@ -20,11 +20,11 @@
             return $valiny;
         }
 
-        public function inscritpion($nom,$email,$mdp,$genre,$taille,$poids)
+        public function inscritpion($pseudo,$email,$mdp,$genre,$taille,$poids)
         {
 
             $sql = "INSERT INTO users VALUES(null,?,?,?,?,0)";
-            $this->db->query($sql, array($nom,$email,$mdp,$genre));
+            $this->db->query($sql, array($pseudo,$email,$mdp,$genre));
             
             $last_insert_id = $this->db->insert_id();
 
@@ -33,11 +33,11 @@
 
             $data = array(
                 'status' => 'OK',
-                'data' => $last_row,
+                'data' => $last_insert_id,
             );
 
             $jsonData = json_encode($data);
-           return $this->response->setJSON($data);
+            return $this->output->set_content_type('application/json')->set_output($jsonData);
         }
     }
 ?>

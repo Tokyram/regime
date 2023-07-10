@@ -1,3 +1,6 @@
+<?php
+ var_dump($info);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +32,19 @@
         <div class="additional-info">
             <h1>INFORMATION </h1>
             <ul>
-                <li><strong>Nom:</strong> RAOKOTO JEAN</li>
-                <li><strong>Poids:</strong> 60 kg</li>
-                <li><strong>Taille:</strong> 1,74 m</li>
-                <li><strong>Genre:</strong> Homme</li>
+                <li id="name"><strong>Nom:</strong><?php echo $info['pseudo']; ?></li>
+                <li id="poids"><strong>Poids:</strong><?php echo $info['poids']; ?></li>
+                <li id="size"><strong>Taille:</strong> <?php echo $info['taille']; ?> m</li>
+                <?php
+                    if($info['genre']==0)
+                    {
+                        echo '<li id="genre"><strong>Genre:</strong> Femme</li>';
+                    }
+                    else
+                    {
+                        echo '<li id="genre"><strong>Genre:</strong> Homme</li>';
+                    }
+                ?>
             </ul>
         </div>
         <a href="#"><button type="button" class="action">Nouvelle achat</button></a>
@@ -141,6 +153,8 @@
             form.classList.toggle('hidden');
     
         }
+
+        
 
     </script>
 </body>

@@ -26,7 +26,10 @@ class ClientController extends CI_Controller
 
 	public function accueil()
 	{
-		$this->load->view('page/accueil');
+		$iduser = $this->session->userdata('idUser');
+		$info = $this->Client->getinfouser($iduser);
+		$data['info'] = $info;
+		$this->load->view('page/accueil', $data);
 
 	}
 
@@ -35,6 +38,12 @@ class ClientController extends CI_Controller
 		$nomcode = $this->input->post("nomcode");
 		$idcode = $this->Client->getidcode($nomcode);
 		$this->Client->insertcode($idcode['idCode'],$iduser);
+	}
+
+	
+	public function infoUser(){
+		$this->load->model('Client');
+		$this->Client->getinfouser(2);
 	}
 
 

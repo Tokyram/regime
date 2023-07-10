@@ -22,10 +22,13 @@ class Login extends CI_Controller {
 			if($this->session->userdata('typeUser') == 0){
 				redirect('admin/index');
 			}else{
-				redirect('client/index');
+				header("HTTP/1.1 200 OK");
+				echo json_encode("Ok");
 			}
 		}else{
-			redirect('login/index');
+			header("HTTP/1.1 401 Unauthorized");
+			echo json_encode("Authentication failed");
+
 		}
 	}
 }

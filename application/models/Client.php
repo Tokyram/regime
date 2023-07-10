@@ -37,13 +37,9 @@
             $query = $this->db->query($sql, array($iduser));
             $row = $query->row_array();
 
-            $data = array(
-                'status' => 'OK',
-                'data' => $row,
-            );
-            $jsonData = json_encode($data);
+          
 
-            return $this->output->set_content_type('application/json')->set_output($jsonData);
+            return $row;
         }
 
     }

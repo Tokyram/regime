@@ -27,6 +27,6 @@ class Inscr extends CI_Controller {
         // }
 
 		$this->load->model('Model');
-		$this->Model->inscritpion($nom,$mail,$pass,$genre,$taille,$poids);
+		$this->Model->inscription($nom,$mail,$pass,$genre,$taille,$poids);
 	}
 }

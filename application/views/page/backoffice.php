@@ -65,8 +65,39 @@
     </div>
 
     <div class="content" id="section2">
-        <h2>Section 2</h2>
-        <p>Contenu de la section 2.</p>
+    <div class="form-container">
+            <div class="logo-container">
+              NOUVELLE ACTIVITER
+            </div>
+      
+            <form class="form" method="get" action="">
+              <div class="form-group">
+                <label for="email">Type activier</label>
+                <select  type="text" id="email" name="select" required="">
+                    <option value=""></option>
+                </select>
+                <!-- <input type="text" id="email" name="email" placeholder="Enter your email" required=""> -->
+              </div>
+              <div class="form-group">
+                <label for="email">Nom activiter</label>
+                <input type="text" id="nom" name="nom" placeholder="nom d'activiter" required="">
+              </div>
+              <div class="form-group">
+                <label for="email">Resultat</label>
+                <input type="number" id="resultat" name="resultat" placeholder="resultat" required="">
+              </div>
+              <div class="form-group">
+                <label for="email">Frequence</label>
+                <input type="number" id="frequence" name="frequence" placeholder="frequence" required="">
+              </div>
+              <div class="form-group">
+                <label for="email">Montant</label>
+                <input type="number" id="montant" name="montant" placeholder="montant" required="">
+              </div>
+      
+              <button class="form-submit-btn" type="submit">VALIDER</button>
+            </form>
+          </div>
     </div>
 
     <div class="content" id="section3">

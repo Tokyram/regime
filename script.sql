@@ -8,9 +8,17 @@ CREATE TABLE users(
     email VARCHAR(20),
     mdp VARCHAR(20),
     genre INT,
+    typeUser INT
+);
+
+CREATE TABLE info(
+    idInfo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idUser INT,
     taille NUMERIC(10, 2),
     poids NUMERIC(10, 2),
-    typeUser INT
+    dateInfo DATETIME,
+    CONSTRAINT FK_userInfo FOREIGN KEY(idUser)
+    REFERENCES users(idUser)
 );
 
 CREATE TABLE histoPocket(
@@ -75,5 +83,37 @@ CREATE TABLE regimeCompo(
     CONSTRAINT FK_act FOREIGN KEY(idAct)
     REFERENCES activite(idAct)
 );
+
+INSERT INTO users VALUES
+(NULL, 'Admin', 'admin@gmail.com', 'admin', 1, 0),
+(NULL, 'Toky', 'toky@gmail.com', 'toky', 1, 1),
+(NULL, 'Miora', 'miora@gmail.com', 'miora', 0, 1),
+(NULL, 'Yvan', 'yvan@gmail.com', 'yvan', 1, 1),
+(NULL, 'Rabe', 'rabe@gmail.com', 'rabe', 1, 1),
+(NULL, 'Randria', 'randria@gmail.com', 'randria', 0, 1);
+
+INSERT INTO info VALUES
+(NULL, 2, 167.5, 54, '2023-07-10 08:00:00'),
+(NULL, 3, 150, 59, '2023-07-10 08:00:00'),
+(NULL, 4, 190, 85, '2023-07-10 08:00:00'),
+(NULL, 5, 175, 62, '2023-07-10 08:00:00'),
+(NULL, 6, 154, 51, '2023-07-10 08:00:00');
+
+
+INSERT INTO typeActivite VALUES
+(NULL, 'Regime'),
+(NULL, 'Sport');
+
+INSERT INTO activite VALUES
+(NULL, 1, 'Pomme', -1, 7, 500),
+(NULL, 1, 'Cotelette', 2, 5, 5000),
+(NULL, 1, 'Legumes sautees', -0.5, 4, 3000),
+(NULL, 1, 'Fromage', 0.5, 5, 2000),
+(NULL, 1, 'Poisson', -1, 3, 4500),
+(NULL, 2, 'Planche', -5, 7, 0),
+(NULL, 2, 'Jogging', -2, 5, 0),
+(NULL, 2, 'Pompe', -4, 7, 0),
+(NULL, 2, 'Flexion', -0.5, 3, 0),
+(NULL, 2, 'Muscu', -1, 7, 0);
 
 

@@ -1,0 +1,4 @@
+Controller : Admin
+
+POST
+insertcode($idcode,$iduser)

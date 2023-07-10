@@ -20,9 +20,8 @@
             return $valiny;
         }
 
-        public function inscritpion($pseudo,$email,$mdp,$genre,$taille,$poids)
+        public function inscription($pseudo,$email,$mdp,$genre,$taille,$poids)
         {
-
             $sql = "INSERT INTO users VALUES(null,?,?,?,?,0)";
             $this->db->query($sql, array($pseudo,$email,$mdp,$genre));
             

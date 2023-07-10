@@ -23,7 +23,7 @@
                 
             </div>
             <div class="profile-info">
-                <h2>Nom de la personne</h2>
+                <h2><?php echo $info['pseudo']; ?></h2>
                 <!-- <p>Profession</p>
                 <a href="#" class="button">Contacter</a> -->
             </div>

@@ -52,7 +52,7 @@
         <a href="#"><button type="button" class="action" style="background-color: #ffffff;">Ajouter Argent</button></a>
         
         <div class="vola">
-            <p>1 000 000Ar</p>
+            <p><?php echo $money; ?> Ar</p>
         </div>
     </div>
     <div class="content" >

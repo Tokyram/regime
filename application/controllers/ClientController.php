@@ -29,6 +29,7 @@ class ClientController extends CI_Controller
 		$iduser = $this->session->userdata('idUser');
 		$info = $this->Client->getinfouser($iduser);
 		$data['info'] = $info;
+		$data['money'] = $this->Admin->getmonney($iduser);
 		$this->load->view('page/accueil', $data);
 
 	}

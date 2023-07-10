@@ -4,7 +4,8 @@
     class Admin extends CI_Model 
     {
         public function getnotif(){
-            $sql = "SELECT * FROM histoCode WHERE statusCode = 0";
+            $sql = "SELECT hc.*,c.code,c.montant,u.pseudo FROM histoCode hc JOIN code c ON hc.idCode = c.idCode
+            JOIN users u ON hc.idUser = u.idUser WHERE statusCode = 0";
             $query = $this->db->query($sql);
             $result = $query->result_array();
 

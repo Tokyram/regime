@@ -77,7 +77,11 @@
         if (request.status === 200) {
           // Request successful
           window.location.href = "<?php echo base_url(); ?>/ClientController/accueil";  // Redirect to another page
-        } else {
+        } 
+        else if(request.status === 201){
+          window.location.href = "<?php echo base_url(); ?>/AdminController";  // Redirect to another page
+        }
+        else  {
           // Request failed
           console.error("Request failed with status", request.status);
         }

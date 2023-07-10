@@ -20,7 +20,9 @@ class Login extends CI_Controller {
 		if($this->Model->checkLogin($mail,$pass))
 		{
 			if($this->session->userdata('typeUser') == 0){
-				redirect(base_url("AdminController"));
+				header("HTTP/1.1 201 OK");
+				echo json_encode("Ok");
+				//redirect(base_url("AdminController"));
 			}else{
 				header("HTTP/1.1 200 OK");
 				echo json_encode("Ok");

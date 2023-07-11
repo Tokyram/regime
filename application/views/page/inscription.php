@@ -27,7 +27,7 @@
           </h3>
         </div>
 
-        <div class="loader">
+        <div class="loader" style="margin-top:-200px">
           <div class="circle"></div>
           <div class="circle"></div>
           <div class="circle"></div>

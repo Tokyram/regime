@@ -53,7 +53,13 @@ class ClientController extends CI_Controller
 		redirect(base_url());
 	}
 
+	public function validRegime(){
+		$objectif = 0;
+		$liste = [];
 
+		$this->load->model('Client');
+		$this->Client->create_function(userdata('idUser'),$objectif,$liste);
+	}
     
 }
 ?>

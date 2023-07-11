@@ -6,7 +6,7 @@
         
 
         public function listecodevalide(){
-            $sql = "SELECT idCode,code, montant FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1)";
+            $sql = "SELECT idCode,code,montant FROM code WHERE idCode NOT IN (SELECT idCode FROM HistoCode WHERE statusCode = 1)";
             $query = $this->db->query($sql);
             $row = $query->result_array();
             return $row;
@@ -47,6 +47,33 @@
           
 
             return $row;
+        }
+
+        public function gettotal($liste){
+            $total = 0;
+            foreach($element in $liste){
+                $total += $element.montant;
+            }
+            return $total;
+        }
+
+        
+
+        public function create_regime($idUser,$objectif,$liste)
+        {
+            $montant = gettotal($liste);
+            $sql = "INSERT INTO regime VALUES(null,?,now(),?,?)";
+            $this->db->query($sql, array($idUser,$montant,$objectif));
+
+            $last_insert_id = $this->db->insert_id();
+
+            $i = 0;
+            foreach($element in $liste){
+                $sql = "INSERT INTO regime VALUES(null,?,?)";
+                $this->db->query($sql, array($last_insert_id,$element.idActivite));
+                $i ++;
+            }
+            return $i;
         }
 
     }

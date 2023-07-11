@@ -33,7 +33,7 @@
 
             $data = array(
                 'status' => 'OK',
-                'data' => $last_insert_id,
+                'data' => $last_insert_id
             );
 
             $jsonData = json_encode($data);
@@ -42,7 +42,7 @@
 
         public function activiteMampihena()
         {
-            $sql = "SELECT * FROM activite where resultat<0";
+            $sql = "SELECT * FROM activite where resultat < 0";
             $query = $this->db->query($sql);
             $row = $query->result_array(); 
 

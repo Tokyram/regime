@@ -15,6 +15,7 @@ class AdminController extends CI_Controller
     public function index()
 	{
 		$data['notif'] = $this->Admin->getnotif();
+		$data['activites']=$this->Admin->getallactivite();
 		$this->load->view('page/backoffice', $data);
 	}
 

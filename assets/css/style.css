@@ -719,15 +719,19 @@ color: rgba(17, 24, 39, 1);
 }
 
 .error{
+  display: none;
   position: relative;
   font-size: 1.2em;
-  padding: 0.7em 1.4em;
-  background-color: #BF0426;
+  padding: 5px 25px;
+  background-color: #ff002f;
   text-decoration: none;
   border: none;
   border-radius: 0.5em;
-  color: #DEDEDE;
-  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.active{
+  display: block!important;
 }
 
 .error::before{

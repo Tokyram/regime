@@ -50,6 +50,7 @@ class ClientController extends CI_Controller
 
 	public function suggestion(){
 		$this->load->model('Client');
+<<<<<<< Updated upstream
 		$objectif = $this->input->get("objectif");
 		$poids = $this->input->get("poids");
 		$data['suggestion'] = $this->Client->suggerer($objectif, $poids);
@@ -58,6 +59,9 @@ class ClientController extends CI_Controller
 
 	public function listeSugg(){
 		$this->load->view('page/listeSuggestion');
+=======
+		var_dump($this->Client->suggerer(1, 5));
+>>>>>>> Stashed changes
 	}
 
 	public function logout(){

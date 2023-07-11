@@ -23,7 +23,7 @@
 
         <div class="error">
           <h3>
-            <b>Il y a erreur !</b>
+            <b>Erreur d'inscription</b>
           </h3>
         </div>
 

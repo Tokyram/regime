@@ -14,7 +14,7 @@
 
         <div class="error">
           <h3>
-            <b>Il y a erreur !</b>
+            <b>Code non valide</b>
           </h3>
         </div>
 

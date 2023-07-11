@@ -84,6 +84,12 @@
 
         dataArray.push( objectif);
 
+        var loader = document.getElementsByClassName("loader");
+        var error=document.getElementsByClassName('error');
+        error[0].classList.remove('active');
+
+        loader[0].classList.add("active-loader");
+
 
     // Convert the array to JSON string
     var jsonData = JSON.stringify(dataArray);
@@ -100,11 +106,13 @@
 
     // Set up a callback function to handle the response
     xhr.onload = function() {
+    loader[0].classList.toggle("active-loader");
     if (xhr.status === 200) {
         // Request successful
         var response = xhr.responseText;
         console.log(response);
     } else {
+        error[0].classList.add('active');
         // Request failed
         console.log('Request failed. Status:', xhr.status);
     }

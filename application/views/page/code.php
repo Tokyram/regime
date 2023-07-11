@@ -44,6 +44,11 @@
     <script>
       document.getElementById("codeForm").addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent the form from submitting normally
+      var loader = document.getElementsByClassName("loader");
+      var error=document.getElementsByClassName('error');
+      error[0].classList.remove('active');
+
+      loader[0].classList.add("active-loader");
 
       var form = event.target;
       var formData = new FormData(form);
@@ -52,15 +57,17 @@
       request.open("POST", "<?php echo base_url() ?>ClientController/code/", true); // Replace with your controller's URL
 
       request.onload = function() {
+      loader[0].classList.toggle("active-loader");
+
         if (request.status >= 200 && request.status < 400) {
           var response = JSON.parse(request.responseText);
-          id(response == "OK")
+          if(response.status == "OK")
           {
             window.location.href = "<?php echo base_url() ?>ClientController/accueil";
           }
           else
           {
-            alert(response);
+            error[0].classList.add('active');
           }
           // Handle the successful response here
         } else {

@@ -106,6 +106,14 @@
             return $this->output->set_content_type('application/json')->set_output($jsonData);
         }
 
+        public function getallactivite(){
+            $sql = "SELECT * FROM activite;
+            $query = $this->db->query($sql);
+            $result = $query->result_array();
+
+            return $result;
+        }
+
 
     }
 ?>

@@ -69,7 +69,7 @@
             <form class="form" method="get" action="">
               <div class="form-group">
                 <label for="email">Type activier</label>
-                <select  type="text" id="email" name="select" required="">
+                <select  type="text" id="email" name="idtype" required="">
                     <option value="1">Regime</option>
                     <option value="0">Sport</option>
 

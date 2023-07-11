@@ -107,7 +107,7 @@
         }
 
         public function getallactivite(){
-            $sql = "SELECT * FROM activite;
+            $sql = "SELECT * FROM activite";
             $query = $this->db->query($sql);
             $result = $query->result_array();
 

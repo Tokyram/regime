@@ -50,12 +50,32 @@ class ClientController extends CI_Controller
 
 	public function suggestion(){
 		$this->load->model('Client');
-		var_dump($this->Client->suggerer(1, 5));
+		$objectif = $this->input->get("objectif");
+		$poids = $this->input->get("poids");
+		$data['suggestion'] = $this->Client->suggerer($objectif, $poids);
+		$this->load->view('page/listeSuggestion', $data);
+	}
+
+	public function listeSugg(){
+		$this->load->view('page/listeSuggestion');
 	}
 
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url());
+	}
+
+	public function validregime()
+	{
+		// Retrieve the JSON data sent via POST
+        $jsonData = $this->input->raw_input_stream;
+
+        // Convert the JSON data to an associative array
+        $data = json_decode($jsonData, true);
+
+        // Access the array data
+        echo json_encode($data);
+
 	}
 
 

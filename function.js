@@ -1,11 +1,6 @@
 async function FetchApiNoData(url, method) {
     const regex = "Notification";
   
-    if(!url.includes(regex)){
-      showLoadingOverlay();
-      await  sleep(500);
-    }
-  
     return fetch(url, {
       method: method,
       credentials: 'include',
@@ -31,8 +26,7 @@ async function FetchApiNoData(url, method) {
   
   
   async function FetchApiWithData(urls, method, data){
-      showLoadingOverlay();
-      await  sleep(500);
+      
   
       const url = urls;
       
@@ -45,7 +39,6 @@ async function FetchApiNoData(url, method) {
       body: JSON.stringify(data)
       })
       .then(response => {
-        hideLoadingOverlay();
           if (!response.ok) {
               console.log(response.body);
               throw new Error(`Request failed with status ${response.status}`);

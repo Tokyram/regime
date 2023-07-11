@@ -98,6 +98,93 @@
           </div>
     </div>
 
+    <div class="form-container-right">
+            
+              <div class="activiter">
+                  <h1>Activiter</h1>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+              </div>
+
+              <div class="activiter">
+                <h1>Activiter</h1>
+                <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+
+            <div class="activiter">
+                <h1>Activiter</h1>
+                <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+                <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+            <div class="activiter">
+              <h1>Activiter</h1>
+              <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: Nom d'activiter</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: resultat</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: frequence</p>
+              <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: MONTANT</p>
+            </div>
+          </div>
+    </div>
+
     <div class="content" id="section3">
         <h2>Section 3</h2>
         <p>Contenu de la section 3.</p>

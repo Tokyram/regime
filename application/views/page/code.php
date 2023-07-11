@@ -17,6 +17,19 @@
             <b>Il y a erreur !</b>
           </h3>
         </div>
+
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
   
         <form class="form" action=""  id="codeForm">
           <div class="form-group">

@@ -760,19 +760,24 @@ color: rgba(17, 24, 39, 1);
 }
 
 .loader {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  height:25px;
   position: absolute;
+  margin-left: 200px;
   /* top: 50%; */
-  margin-top: 1000px;
   /* left: 50%; */
   transform: translate(-50%, -50%);
 }
 
+.hidde{
+  display: none;
+}
+.active-loader{
+  display: flex!important;
+}
 .circle {
   width: 20px;
   height: 20px;

@@ -86,6 +86,11 @@
       <script>
       document.getElementById("myForm").addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent the form from submitting normally
+      var loader = document.getElementsByClassName("loader");
+      var error=document.getElementsByClassName('error');
+      error[0].classList.remove('active');
+
+      loader[0].classList.add("active-loader");
 
       var form = event.target;
       var formData = new FormData(form);
@@ -93,8 +98,13 @@
       var request = new XMLHttpRequest();
       request.open("POST", "<?php echo base_url() ?>Login/login/", true); // Replace with your controller's URL
 
+      
       request.onreadystatechange = function() {
+      
+      
       if (request.readyState === XMLHttpRequest.DONE) {
+        loader[0].classList.toggle("active-loader");
+
         if (request.status === 200) {
           // Request successful
           window.location.href = "<?php echo base_url(); ?>/ClientController/accueil";  // Redirect to another page
@@ -103,7 +113,6 @@
           window.location.href = "<?php echo base_url(); ?>/AdminController";  // Redirect to another page
         }
         else  {
-          var error=document.getElementsByClassName('error');
           console.log(error);
           error[0].classList.add('active');
           // Request failed

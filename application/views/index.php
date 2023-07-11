@@ -8,6 +8,20 @@
     <title>Login</title>
 </head>
 <body>
+
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
     <form class="form_container" id="myForm">
         <div class="logo_container"></div>
         <div class="title_container">

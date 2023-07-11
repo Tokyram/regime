@@ -12,7 +12,7 @@
     <form class="form_container" id="myForm">
         <div class="logo_container"></div>
         <div class="title_container">
-          <div class="user" style="color:black;">
+          <div class="user" style="color:grey; font-size:12px;">
             <p>USER : user@gmail.com , MDP : user</p>
             <p>ADMIN : admin@gmail.com , MDP : admin</p>
           </div>

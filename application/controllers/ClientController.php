@@ -29,6 +29,8 @@ class ClientController extends CI_Controller
 
 	public function accueil()
 	{
+		if(isset($_SESSION['idUser']) == false)
+			redirect(base_url());
 		$iduser = $_SESSION['idUser'];
 		$info = $this->Client->getinfouser($iduser);
 		$data['info'] = $info;
@@ -52,6 +54,8 @@ class ClientController extends CI_Controller
 	}
 
 	public function suggestion(){
+		if(isset($_SESSION['idUser']) == false)
+			redirect(base_url());
 		$this->load->model('Client');
 		$objectif = $this->input->get("objectif");
 		$poids = $this->input->get("poids");
@@ -60,6 +64,8 @@ class ClientController extends CI_Controller
 	}
 
 	public function listeSugg(){
+		if(isset($_SESSION['idUser']) == false)
+			redirect(base_url());
 		$this->load->view('page/listeSuggestion');
 	}
 

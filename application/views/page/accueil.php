@@ -225,7 +225,6 @@
                   <span>Tristique enim nec</span>
               </li>
           </ul>
-          <button type="button" class="action">Faire l'achat</button>
       </div>
 
       <div class="card">
@@ -260,10 +259,10 @@
                 <span>Tristique enim nec</span>
             </li>
         </ul>
-        <button type="button" class="action">Faire l'achat</button>
     </div>
           <button id="modal-close-btn" class="modal-close-btn">Fermer</button>
           <a href="#"><button type="button" class="action" >REGENERER</button></a>
+          <a href="#"><button type="button" class="action" >VALIDER</button></a>
       </div>
   </div>
   <div id="modal-overlay" class="modal-overlay"></div>

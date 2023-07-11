@@ -86,34 +86,59 @@ CREATE TABLE regimeCompo(
 
 INSERT INTO users VALUES
 (NULL, 'Admin', 'admin@gmail.com', 'admin', 1, 0),
+(NULL, 'User', 'user@gmail.com', 'user', 1, 1),
+(NULL, 'Raitra', 'raitra@gmail.com', 'raitra', 1, 1),
 (NULL, 'Toky', 'toky@gmail.com', 'toky', 1, 1),
-(NULL, 'Miora', 'miora@gmail.com', 'miora', 0, 1),
-(NULL, 'Yvan', 'yvan@gmail.com', 'yvan', 1, 1),
-(NULL, 'Rabe', 'rabe@gmail.com', 'rabe', 1, 1),
-(NULL, 'Randria', 'randria@gmail.com', 'randria', 0, 1);
+(NULL, 'Princy', 'princy@gmail.com', 'princy', 0, 1);
 
 INSERT INTO info VALUES
-(NULL, 2, 167.5, 54, '2023-07-10 08:00:00'),
-(NULL, 3, 150, 59, '2023-07-10 08:00:00'),
-(NULL, 4, 190, 85, '2023-07-10 08:00:00'),
-(NULL, 5, 175, 62, '2023-07-10 08:00:00'),
-(NULL, 6, 154, 51, '2023-07-10 08:00:00');
-
+(NULL, 2, 169, 65, '2023-07-10 08:00:00'),
+(NULL, 3, 160, 55, '2023-07-10 08:00:00'),
+(NULL, 4, 167.5, 67, '2023-07-10 08:00:00'),
+(NULL, 5, 150, 45, '2023-07-10 08:00:00');
 
 INSERT INTO typeActivite VALUES
 (NULL, 'Regime'),
 (NULL, 'Sport');
 
 INSERT INTO activite VALUES
-(NULL, 1, 'Pomme', -1, 7, 500),
-(NULL, 1, 'Cotelette', 2, 5, 5000),
-(NULL, 1, 'Legumes sautees', -0.5, 4, 3000),
-(NULL, 1, 'Fromage', 0.5, 5, 2000),
-(NULL, 1, 'Poisson', -1, 3, 4500),
-(NULL, 2, 'Planche', -5, 7, 0),
-(NULL, 2, 'Jogging', -2, 5, 0),
-(NULL, 2, 'Pompe', -4, 7, 0),
-(NULL, 2, 'Flexion', -0.5, 3, 0),
-(NULL, 2, 'Muscu', -1, 7, 0);
+(NULL, 1, 'Avocat', -1, 7, 3000),
+(NULL, 1, 'Pattes', 2, 5, 5000),
+(NULL, 1, 'Pomme frite', 2.5, 2, 3000),
+(NULL, 1, 'Yaourt', -0.5, 5, 2000),
+(NULL, 1, 'Crevette', 1, 3, 4500),
+(NULL, 2, 'Marche a pied', -5, 2, 0),
+(NULL, 2, 'Pompe', -2, 10, 0),
+(NULL, 2, 'Planche', -4, 7, 0),
+(NULL, 2, 'Corde a sauter', -0.5, 3, 0),
+(NULL, 2, 'Musculation', 1, 7, 0);
 
+INSERT INTO code VALUES
+(NULL, 'ABCcode1', 1000),
+(NULL, 'CodeEvo2', 2000),
+(NULL, 'Codefor3', 3000),
+(NULL, 'Code4free', 4000),
+(NULL, 'Codetap5', 5000),
+(NULL, 'XXX_code666', 6000),
+(NULL, 'Codeigniter', 7000),
+(NULL, 'Infinite_Code8', 8000),
+(NULL, 'InitCode09', 9000),
+(NULL, 'TheCode10', 10000),
+(NULL, 'CInazuma11', 11000),
+(NULL, 'Col12', 12000),
+(NULL, 'Code_Promo13', 13000),
+(NULL, 'Cod14', 14000),
+(NULL, 'CodexArt15', 15000),
 
+INSERT INTO histoCode VALUES
+(NULL, 12, 3, 0),
+(NULL, 12, 4, 0),
+(NULL, 4, 4, 0),
+(NULL, 9, 5, 0),
+(NULL, 10, 2, 0);
+
+INSERT INTO histoPocket VALUES
+(NULL, 2, 100000,'2023-07-10 08:00:00', NULL),
+(NULL, 3, 150000, '2023-07-10 08:00:00', NULL),
+(NULL, 4, 250000, '2023-07-10 08:00:00', NULL),
+(NULL, 5, 300000, '2023-07-10 08:00:00', NULL);

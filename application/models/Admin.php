@@ -33,9 +33,7 @@
             $sumsortie = $sumsortie['sortie'];
 
             $reste = $sumentree - $sumsortie;
-            echo $reste;
             return $reste;
-            
         }
 
         public function getcode($idcode)

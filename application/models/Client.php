@@ -88,5 +88,57 @@
             return $final;
         }
 
+
+        public function gettotal($liste){
+            $total = 0;
+            foreach($liste as $element){
+                $total += $element['montant'];
+            }
+            return $total;
+        }
+
+        public function retiremoney($iduser,$retire){
+
+            $sql = "INSERT INTO histoPocket VALUES(null,?,?,null,'now()')";
+            $query = $this->db->query($sql, array($iduser,$retire));
+        }
+
+        public function create_regime($iduser,$objectif,$liste)
+        {
+            $retire = $this->Client->gettotal($liste);
+            $montant = $this->Admin->getmonney($iduser);
+            
+            if($montant > $retire){
+                $sql = "INSERT INTO regime VALUES(null,?,now(),?,?)";
+                $this->db->query($sql, array($iduser,$retire,$objectif));
+
+                $mess = "OK";
+                $last_insert_id = $this->db->insert_id();
+                $output = $last_insert_id;
+
+                $i = 0;
+                foreach($liste as $element){
+                    $sql = "INSERT INTO regimeCompo VALUES(null,?,?)";
+                    $this->db->query($sql, array($last_insert_id,$element['idAct']));
+                    $i ++;
+                }
+
+                $this->Client->retiremoney($iduser,$retire);
+
+            }else{
+                $mess = "Error";
+                $output = "Insuffisant funds";
+            }
+
+            $data = array(
+                'status' => $mess,
+                'data' => $output,
+            );
+            $jsonData = json_encode($data);
+
+            return $this->output->set_content_type('application/json')->set_output($jsonData);
+        }
+
+
     }
 ?>

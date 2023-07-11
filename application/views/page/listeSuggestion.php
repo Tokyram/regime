@@ -82,12 +82,14 @@
         var dataArray = <?php echo json_encode($suggestion); ?>;
         var objectif = <?php echo $objectif; ?>
 
-        dataArray['objectif'] = objectif;
+        dataArray.push( objectif);
 
-        console.log(dataArray);
 
     // Convert the array to JSON string
     var jsonData = JSON.stringify(dataArray);
+
+    console.log(JSON.parse(jsonData));
+
 
     // Create XMLHttpRequest object
     var xhr = new XMLHttpRequest();

@@ -74,7 +74,31 @@ class ClientController extends CI_Controller
         $data = json_decode($jsonData, true);
 
         // Access the array data
-        echo json_encode($data);
+        // echo json_encode($data);
+
+		// var_dump($data);
+
+		// echo $data[0]['montant'];
+
+		$indice = count($data)-1;
+		$objectif = $data[$indice];
+		echo "objectif".$objectif;
+		echo '<br>';
+
+		$rowToRemove = array(0);
+
+		// Find the index of the row to remove
+		$index = array_search($rowToRemove, $data);
+		
+		// If the row is found, remove it
+		if ($index !== false) {
+			unset($data[$index]);
+		}
+
+		$iduser = $this->session->userdata('idUser');
+
+		$this->load->model('Client');
+		$this->Client->create_regime($iduser,$objectif,$data);
 
 	}
 

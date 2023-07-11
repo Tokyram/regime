@@ -30,13 +30,13 @@
 
         ?>
 
-        <div class="error">
-          <h3>
+        <div class="error" >
+          <h3 style="color:white!important;">
             <b>Erreur </b>
           </h3>
         </div>
 
-        <div class="loader" style="margin-top:-100px">
+        <div class="loader" style="margin-top:100px;">
           <div class="circle"></div>
           <div class="circle"></div>
           <div class="circle"></div>
@@ -128,7 +128,16 @@
     loader[0].classList.toggle("active-loader");
     if (xhr.status === 200) {
         // Request successful
-        var response = xhr.responseText;
+        var response = JSON.parse(xhr.responseText);
+        if(response.status=="Error")
+        {
+            var msg = error[0].getElementsByTagName('h3');
+            msg[0].innerHTML = response.data;
+            error[0].classList.add('active');
+            
+        }else{
+            window.location.href = '<?php echo base_url(); ?>ClientController/accueil';
+        }
         console.log(response);
     } else {
         error[0].classList.add('active');

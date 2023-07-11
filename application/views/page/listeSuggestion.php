@@ -30,6 +30,12 @@
 
         ?>
 
+        <div class="error">
+          <h3>
+            <b>Erreur d'inscription</b>
+          </h3>
+        </div>
+
         <div class="card">
             
           <div class="header">

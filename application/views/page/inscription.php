@@ -23,11 +23,11 @@
 
         <div class="error">
           <h3>
-            <b>Il y a erreur !</b>
+            <b>Erreur d'inscription</b>
           </h3>
         </div>
 
-        <div class="loader">
+        <div class="loader" style="margin-top:-200px">
           <div class="circle"></div>
           <div class="circle"></div>
           <div class="circle"></div>

@@ -9,12 +9,12 @@
 <body>
     <div class="form-containers" style="z-index: 0;">
         <div class="logo-container">
-          Inserer le code promo
+          Inserer le code
         </div>
 
         <div class="error">
           <h3>
-            <b>Il y a erreur !</b>
+            <b>Code non valide</b>
           </h3>
         </div>
 

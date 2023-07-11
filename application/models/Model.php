@@ -33,11 +33,29 @@
 
             $data = array(
                 'status' => 'OK',
-                'data' => $last_insert_id,
+                'data' => $last_insert_id
             );
 
             $jsonData = json_encode($data);
             return $this->output->set_content_type('application/json')->set_output($jsonData);
         }
+
+        public function activiteMampihena()
+        {
+            $sql = "SELECT * FROM activite where resultat < 0";
+            $query = $this->db->query($sql);
+            $row = $query->result_array(); 
+
+            return $row;
+        }
+
+        public function activiteMampitombo()
+        {
+            $sql = "SELECT * FROM activite where resultat>0";
+            $query = $this->db->query($sql);
+            $row = $query->result_array(); 
+
+            return $row;
     }
+}
 ?>

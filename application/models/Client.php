@@ -68,5 +68,96 @@
             return $row;
         }
 
+        public function suggerer($objectif, $poids)
+        {
+            $this->load->model('Model');
+            $goal = 0;
+            $liste = array();
+            if($objectif == 0){
+                $goal = $poids * (-1);
+                $liste = $this->Model->activiteMampihena();
+            }else{
+                $goal = $poids;
+                $liste = $this->Model->activiteMampitombo();
+            }
+
+            $listeUnitaire = array();
+            $x=0;
+            foreach($liste as $l){
+                $listeUnitaire[$x] = $l;
+                $listeUnitaire[$x]['pU'] = round($l['resultat']/$l['frequence'],2);
+                $x++;
+            }
+
+            $somme = 0;
+            $sugg = array();
+
+            for($i=0; $i<7; $i++){
+                $rand = rand(0,(count($liste)-1));
+                $sugg[$i] = $listeUnitaire[$rand];
+                $somme = $somme + $sugg[$i]['pU'];
+            }
+
+            $div = intval($goal/$somme);
+            $final = array();
+            for($a=0; $a<$div; $a++){
+                $final = array_merge($final, $sugg);
+            }
+
+            return $final;
+        }
+
+
+        public function gettotal($liste){
+            $total = 0;
+            foreach($liste as $element){
+                $total += $element['montant'];
+            }
+            return $total;
+        }
+
+        public function retiremoney($iduser,$retire){
+
+            $sql = "INSERT INTO histoPocket VALUES(null,?,?,null,'now()')";
+            $query = $this->db->query($sql, array($iduser,$retire));
+        }
+
+        public function create_regime($iduser,$objectif,$liste)
+        {
+            $retire = $this->Client->gettotal($liste);
+            $montant = $this->Admin->getmonney($iduser);
+            
+            if($montant > $retire){
+                $sql = "INSERT INTO regime VALUES(null,?,now(),?,?)";
+                $this->db->query($sql, array($iduser,$retire,$objectif));
+
+                $mess = "OK";
+                $last_insert_id = $this->db->insert_id();
+                $output = $last_insert_id;
+
+                $i = 0;
+                foreach($liste as $element){
+                    $sql = "INSERT INTO regimeCompo VALUES(null,?,?)";
+                    $this->db->query($sql, array($last_insert_id,$element['idAct']));
+                    $i ++;
+                }
+
+                $this->Client->retiremoney($iduser,$retire);
+
+            }else{
+                $mess = "Error";
+                $output = "Insuffisant funds";
+            }
+
+            $data = array(
+                'status' => $mess,
+                'data' => $output,
+            );
+            $jsonData = json_encode($data);
+
+            return $this->output->set_content_type('application/json')->set_output($jsonData);
+        }
+
+
     }
 ?>

@@ -12,6 +12,10 @@
     <form class="form_container" id="myForm">
         <div class="logo_container"></div>
         <div class="title_container">
+          <div class="user" style="color:black;">
+            <p>USER : user@gmail.com , MDP : user</p>
+            <p>ADMIN : admin@gmail.com , MDP : admin</p>
+          </div>
           <p class="title">Login</p>
           <span class="subtitle">Connectez-vous à votre compte personnel dédié au régime alimentaire. </span>
         </div>

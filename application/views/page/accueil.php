@@ -47,7 +47,6 @@
                 ?>
             </ul>
         </div>
-        <a href="#"><button type="button" class="action">Nouvelle achat</button></a>
         <a href="<?php  echo base_url();?>ClientController/codepage"><button type="button" class="action" style="background-color: #ffffff;">Ajouter Argent</button></a>
         <a href="<?php  echo base_url();?>ClientController/logout"><button type="button" class="action" style="background-color: #ffffff;">DECONNEXION</button></a>
         
@@ -108,49 +107,6 @@
         </form>
         </div>
         </div>
-    </div>
-
-    <div class="content">
-        <h1>SUGGESTION DE REGIME</h1>
-        <p>Voici la liste des suggestions pour améliorer votre régime alimentaire. Prenez en compte ces recommandations afin d'optimiser votre alimentation et d'adopter de bonnes habitudes pour votre santé.</p>
-        <div class="card">
-            <div class="header">
-                <span class="title">Suggestion 1</span>
-                <!-- <span class="price">Free</span> -->
-            </div>
-            <!-- <p class="desc">Etiam ac convallis enim, eget euismod dolor.</p> -->
-            <ul class="lists">
-                <li class="list">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Aenean quis</span>
-                </li>
-                <li class="list">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Morbi semper</span>
-                </li>
-                <li class="list">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Tristique enim nec</span>
-                </li>
-                <li class="list">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>Tristique enim nec</span>
-                </li>
-            </ul>
-            <button type="button" class="action"><strong>FRECENCE</strong> : 4</button>
-        </div>
-
-        <a href="#"><button type="button" class="action" >Ajouter suggestions</button></a>
-
-        
     </div>
 
     <div class="content">

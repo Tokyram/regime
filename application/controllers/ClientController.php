@@ -48,6 +48,11 @@ class ClientController extends CI_Controller
 		$this->Client->getinfouser(2);
 	}
 
+	public function suggestion(){
+		$this->load->model('Client');
+		var_dump($this->Client->suggerer(1, 5));
+	}
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url());

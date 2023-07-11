@@ -11,6 +11,12 @@
         <div class="logo-container">
           Inserer le code promo
         </div>
+
+        <div class="error">
+          <h3>
+            <b>Il y a erreur !</b>
+          </h3>
+        </div>
   
         <form class="form" action=""  id="codeForm">
           <div class="form-group">

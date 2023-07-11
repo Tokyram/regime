@@ -66,9 +66,11 @@
             <input class="cyberpunk-checkbox" type="checkbox" onclick="toggleForm('form1')"> REDUIRE LE POIDS
         </label>
         <div class="form-containers">
-        <form id="form1" action="" method="get" class="hidden" >
+        <form id="form1" action="<?php echo base_url(); ?>ClientController/suggestion" method="get" class="hidden" >
             <div class="form-group">
                 <label for="poids1">Poids</label>
+                <input type="number" name="objectif" value=0 hidden>
+
                 <input type="number" id="poids1" name="poids" placeholder="poids" required="">
               </div>
       
@@ -79,9 +81,10 @@
             <input class="cyberpunk-checkbox" type="checkbox" onclick="toggleForm('form2')"> AUGMENTER LE POIDS
         </label>
         <div class="form-containers">
-        <form id="form2" action="" method="get" class="hidden">
+        <form id="form2" action="<?php echo base_url(); ?>ClientController/suggestion" method="get" class="hidden">
             <div class="form-group">
                 <label for="poids2">Poids</label>
+                <input type="number" name="objectif" value=1 hidden>
                 <input type="number" id="poids2" name="poids" placeholder="poids" required="">
               </div>
       
@@ -93,9 +96,11 @@
             <input class="cyberpunk-checkbox" type="checkbox" onclick="toggleForm('form3')"> MAINTIENT
         </label>
         <div class="form-containers">
-        <form id="form3" action="" method="get" class="hidden">
+        <form id="form3" action="<?php echo base_url(); ?>ClientController/suggestion" method="get" class="hidden">
             <div class="form-group">
                 <label for="poids3">Poids</label>
+                <input type="number" name="objectif" value=1>
+
                 <input type="number" id="poids3" name="poids" placeholder="poids" required="">
               </div>
       
@@ -140,7 +145,7 @@
                     <span>Tristique enim nec</span>
                 </li>
             </ul>
-            <button type="button" class="action">Faire l'achat</button>
+            <button type="button" class="action"><strong>FRECENCE</strong> : 4</button>
         </div>
 
         <a href="#"><button type="button" class="action" >Ajouter suggestions</button></a>
@@ -187,6 +192,9 @@
           </div>
 
     </div>
+
+    
+  <div id="modal-overlay" class="modal-overlay"></div>
     
     <script>
         function toggleForm(formId) {
@@ -194,9 +202,6 @@
             form.classList.toggle('hidden');
     
         }
-
-        
-
     </script>
 </body>
 </html>

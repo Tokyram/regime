@@ -20,11 +20,24 @@
           <span class="subtitle">Inscrivez-vous pour bénéficier d'un Regime qui correspond a votre demande</span>
         </div>
         <br>
-        
+
         <div class="error">
           <h3>
             <b>Il y a erreur !</b>
           </h3>
+        </div>
+
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
         
         <div class="input_container">

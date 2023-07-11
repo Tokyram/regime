@@ -1,3 +1,6 @@
+<?php
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +31,7 @@
 
         <?php 
           foreach($notif as $notifs){
-
+            
           
 
         ?>
@@ -61,7 +64,7 @@
     </div>
 
     <div class="content" id="section2">
-    <div class="form-container">
+    <div class="form-container" id="myForm">
             <div class="logo-container">
               NOUVELLE ACTIVITER
             </div>
@@ -69,8 +72,10 @@
             <form class="form" method="get" action="">
               <div class="form-group">
                 <label for="email">Type activier</label>
-                <select  type="text" id="email" name="select" required="">
-                    <option value=""></option>
+                <select  type="text" id="email" name="idtype" required="">
+                    <option value="1">Regime</option>
+                    <option value="0">Sport</option>
+
                 </select>
                 <!-- <input type="text" id="email" name="email" placeholder="Enter your email" required=""> -->
               </div>
@@ -94,6 +99,28 @@
               <button class="form-submit-btn" type="submit">VALIDER</button>
             </form>
           </div>
+
+          <div class="form-container-right">
+          <?php
+              $i = 1;
+
+            foreach($activites as $activite){
+              
+          ?>
+              <div class="activiter">
+                  <h1>Activite <?php echo $i;?></h1>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">ACTIVITE</strong>: <?php echo $activite['nom']; ?></p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">RESULTAT</strong>: <?php echo $activite['resultat']; ?></p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">FREQUENCE</strong>: <?php echo $activite['frequence']; ?></p>
+                  <p><strong style="color: rgba(167, 139, 250, 1);">MONTANT</strong>: <?php echo $activite['montant']; ?></p>
+              </div>
+              <?php
+              $i++;
+                }
+          ?>
+
+
+              
     </div>
 
     <div class="content" id="section3">
@@ -120,6 +147,43 @@
                 }
             });
         }
+
+      document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      var form = event.target;
+      var formData = new FormData(form);
+
+      var request = new XMLHttpRequest();
+      request.open("POST", "<?php echo base_url() ?>AdminController/addactivite/", true); // Replace with your controller's URL
+
+      request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+          // Request successful
+          console.log(request.responsetext);
+
+        } 
+       
+        else  {
+          // Request failed
+          console.error("Request failed with status", request.status);
+        }
+      }
+    };
+
+      request.onerror = function() {
+        // Handle network errors here
+        console.error("Network error");
+      };
+
+      request.send(formData);
+    });
     </script>
+
+
+     
+
+    
 </body>
 </html>

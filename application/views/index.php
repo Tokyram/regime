@@ -14,6 +14,13 @@
           <p class="title">Login</p>
           <span class="subtitle">Connectez-vous à votre compte personnel dédié au régime alimentaire. </span>
         </div>
+
+        <div class="error">
+          <h3>
+            <b>Il y a erreur !</b>
+          </h3>
+        </div>
+
         <br>
         <div class="input_container">
           <label class="input_label" for="email_field">Email</label>

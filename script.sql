@@ -128,7 +128,7 @@ INSERT INTO code VALUES
 (NULL, 'Col12', 12000),
 (NULL, 'Code_Promo13', 13000),
 (NULL, 'Cod14', 14000),
-(NULL, 'CodexArt15', 15000),
+(NULL, 'CodexArt15', 15000);
 
 INSERT INTO histoCode VALUES
 (NULL, 12, 3, 0),

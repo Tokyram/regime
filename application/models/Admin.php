@@ -80,6 +80,7 @@
 
             return $this->output->set_content_type('application/json')->set_output($jsonData);
         }
+        
         public function getnotif(){
             $sql = "SELECT hc.*,c.code,c.montant,u.pseudo FROM histoCode hc JOIN code c ON hc.idCode = c.idCode
             JOIN users u ON hc.idUser = u.idUser WHERE statusCode = 0";

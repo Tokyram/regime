@@ -21,6 +21,7 @@
             <li><a href="#section1" class="sidebar-link">VALIDATION</a></li>
             <li><a href="#section2" class="sidebar-link">ACTIVITE</a></li>
             <li><a href="#section3" class="sidebar-link">CHART</a></li>
+            <li><a href="<?php  echo base_url();?>ClientController/logout" class="sidebar-link">DECONNEXION</a></li>
         </ul>
     </div>
 

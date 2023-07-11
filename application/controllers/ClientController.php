@@ -82,8 +82,8 @@ class ClientController extends CI_Controller
 
 		$indice = count($data)-1;
 		$objectif = $data[$indice];
-		echo "objectif".$objectif;
-		echo '<br>';
+		// echo "objectif".$objectif;
+		// echo '<br>';
 
 		$rowToRemove = array(0);
 

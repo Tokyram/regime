@@ -93,22 +93,6 @@
         public function refus($idcode,$iduser){
             $sql = "UPDATE histoCode SET statusCode = 2 WHERE idCode = ? AND idUser = ?";
             $query = $this->db->query($sql, array($idcode,$iduser));
-
-            if($last_insert_id > 0){
-                $mess = "OK";
-                $output = $last_insert_id;
-            }else{
-                $mess = "Error";
-                $output = "CODE";
-            }
-
-            $data = array(
-                'status' => $message,
-                'data' => $last_insert_id,
-            );
-            $jsonData = json_encode($data);
-
-            return $this->output->set_content_type('application/json')->set_output($jsonData);
         }
 
 

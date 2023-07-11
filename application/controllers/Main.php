@@ -27,7 +27,6 @@ class Main extends CI_Controller
 		$this->load->model('Admin');
 		$this->Admin->refus($idcode,$iduser);
 
-		// $this->Admin->validercode($idcode,$iduser);
 	}
 
 	public function getmonney(){

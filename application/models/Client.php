@@ -57,7 +57,13 @@
             return $total;
         }
 
-        
+        public function retiremoney($idUser,$retire){
+            $montant = $this->Admin->getmonney($iduser);
+
+            $reste = $montant - $retire;
+            $sql = "INSERT INTO histoPocket VALUES(null,?,?,null,'now()')";
+            $query = $this->db->query($sql, array($iduser,$reste));
+        }
 
         public function create_regime($idUser,$objectif,$liste)
         {
@@ -70,7 +76,7 @@
             $i = 0;
             foreach($element in $liste){
                 $sql = "INSERT INTO regime VALUES(null,?,?)";
-                $this->db->query($sql, array($last_insert_id,$element.idActivite));
+                $this->db->query($sql, array($last_insert_id,$element.idAct));
                 $i ++;
             }
             return $i;

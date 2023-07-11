@@ -1,4 +1,6 @@
 <?php
+if(session_id() === "") 
+session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
@@ -19,7 +21,7 @@ class Login extends CI_Controller {
 		$this->load->model('Model');
 		if($this->Model->checkLogin($mail,$pass))
 		{
-			if($this->session->userdata('typeUser') == 0){
+			if($_SESSION['typeUser'] == 0){
 				header("HTTP/1.1 201 OK");
 				echo json_encode("Ok");
 				//redirect(base_url("AdminController"));

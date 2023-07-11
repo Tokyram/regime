@@ -1,4 +1,7 @@
 <?php
+    if(session_id() === "") 
+	session_start();
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ClientController extends CI_Controller 
@@ -26,7 +29,7 @@ class ClientController extends CI_Controller
 
 	public function accueil()
 	{
-		$iduser = $this->session->userdata('idUser');
+		$iduser = $_SESSION['idUser'];
 		$info = $this->Client->getinfouser($iduser);
 		$data['info'] = $info;
 		$data['money'] = $this->Admin->getmonney($iduser);
@@ -36,7 +39,7 @@ class ClientController extends CI_Controller
 	}
 
 	public function code(){
-		$iduser = $this->session->userdata("idUser");
+		$iduser = $_SESSION["idUser"];
 		$nomcode = $this->input->post("nomcode");
 		$idcode = $this->Client->getidcode($nomcode);
 		$this->Client->insertcode($idcode['idCode'],$iduser);
@@ -61,7 +64,8 @@ class ClientController extends CI_Controller
 	}
 
 	public function logout(){
-		$this->session->sess_destroy();
+		//$this->session->sess_destroy();
+		session_destroy();
 		redirect(base_url());
 	}
 
@@ -95,7 +99,7 @@ class ClientController extends CI_Controller
 			unset($data[$index]);
 		}
 
-		$iduser = $this->session->userdata('idUser');
+		$iduser = $_SESSION['idUser'];
 
 		$this->load->model('Client');
 		$this->Client->create_regime($iduser,$objectif,$data);

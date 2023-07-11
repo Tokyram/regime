@@ -1,4 +1,6 @@
 <?php
+if(session_id() === "") 
+session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Inscr extends CI_Controller {
@@ -27,12 +29,21 @@ class Inscr extends CI_Controller {
         // }
 
 		$this->load->model('Model');
-		$this->Model->inscription($nom,$mail,$pass,$genre,$taille,$poids);
-		$this->session->set_userdata('pseudo', $nom);
-		$this->session->set_userdata('genre', $genre);
-		$this->session->set_userdata('taille', $taille);
-		$this->session->set_userdata('poids', $poids);
-		$this->session->set_userdata('typeUser', 1	);
+		$idUser = $this->Model->inscription($nom,$mail,$pass,$genre,$taille,$poids);
+		$_SESSION['idUser'] = $idUser;
+		$_SESSION['pseudo'] = $nom;
+		$_SESSION['genre'] = $genre;
+		$_SESSION['taille'] = $taille;
+		$_SESSION['poids'] = $poids;
+		$_SESSION['typeUser'] = 1;
+
+
+
+		// $this->session->set_userdata('pseudo', $nom);
+		// $this->session->set_userdata('genre', $genre);
+		// $this->session->set_userdata('taille', $taille);
+		// $this->session->set_userdata('poids', $poids);
+		// $this->session->set_userdata('typeUser', 1	);
 		header("HTTP/1.1 200 OK");
 	}
 }

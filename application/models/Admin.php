@@ -33,8 +33,7 @@
             $sumsortie = $sumsortie['sortie'];
 
             $reste = $sumentree - $sumsortie;
-            echo $reste;
-            // return $reste;
+            return $reste;
             
         }
 

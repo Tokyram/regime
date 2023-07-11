@@ -31,7 +31,7 @@
 
         <div class="error">
           <h3>
-            <b>Il y a erreur !</b>
+            <b>Erreur d'authentification</b>
           </h3>
         </div>
 
@@ -103,6 +103,9 @@
           window.location.href = "<?php echo base_url(); ?>/AdminController";  // Redirect to another page
         }
         else  {
+          var error=document.getElementsByClassName('error');
+          console.log(error);
+          error[0].classList.add('active');
           // Request failed
           console.error("Request failed with status", request.status);
         }

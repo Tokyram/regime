@@ -32,8 +32,21 @@
 
         <div class="error">
           <h3>
-            <b>Erreur d'inscription</b>
+            <b>Erreur </b>
           </h3>
+        </div>
+
+        <div class="loader" style="margin-top:-100px">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
 
         <div class="card">

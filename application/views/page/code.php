@@ -34,9 +34,16 @@
 
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-          var response = request.responseText;
+          var response = JSON.parse(request.responseText);
+          id(response == "OK")
+          {
+            window.location.href = "<?php echo base_url() ?>ClientController/accueil";
+          }
+          else
+          {
+            alert(response);
+          }
           // Handle the successful response here
-          console.log(response);
         } else {
           // Handle errors here
           console.error(request.status);

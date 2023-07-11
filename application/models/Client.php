@@ -16,19 +16,38 @@
         {
             $sql = "INSERT INTO histoCode VALUES(null,?,?,0)";
             $this->db->query($sql, array($idcode,$iduser));
+            $validcode=$this->Client->listecodevalide();
+            $arraId = array();
+            foreach($validcode as $valid)
+            {
+                $arraId[] =$valid['idCode'];
+            }
             
-            $last_insert_id = $this->db->insert_id();
-            $query = $this->db->where('idHistoCode', $last_insert_id)->get('histoCode');
-            
-            $last_row = $query->row();
+            if (in_array($idcode, $arraId))
+            {
+                $last_insert_id = $this->db->insert_id();
+                $query = $this->db->where('idHistoCode', $last_insert_id)->get('histoCode');
+                
+                $last_row = $query->row();
 
-            $data = array(
-                'status' => 'OK',
-                'data' => $last_row,
-            );
-            $jsonData = json_encode($data);
+                $data = array(
+                    'status' => 'OK',
+                    'data' => $last_row,
+                );
+                $jsonData = json_encode($data);
 
-            return $this->output->set_content_type('application/json')->set_output($jsonData);
+                return $this->output->set_content_type('application/json')->set_output($jsonData);
+            }
+            else
+            {
+                $data = array(
+                    'status' => 'Error',
+                    'data' => 'Code non valide',
+                );
+                $jsonData = json_encode($data);
+
+                return $this->output->set_content_type('application/json')->set_output($jsonData);
+            }
         }
 
         public function getidcode($nomcode){

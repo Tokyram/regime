@@ -266,6 +266,7 @@
           <a href="#"><button type="button" class="action" >REGENERER</button></a>
       </div>
   </div>
+  <div id="modal-overlay" class="modal-overlay"></div>
     
     <script>
         function toggleForm(formId) {
